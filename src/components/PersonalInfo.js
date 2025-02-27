@@ -29,7 +29,7 @@ const PersonalInfo = () => {
       <h2 className="text-3xl font-bold text-center mb-8">Personal Information</h2>
       <div className="bg-white rounded-lg shadow-lg p-8">
         <img 
-          src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+          src={require('../images/personalInfo.jpg')} 
           alt="Personal Information"
           className="w-full h-48 object-cover rounded-lg mb-6"
         />
@@ -108,19 +108,19 @@ const PersonalInfo = () => {
             </div>
           </div>
 
-          <div>
-            <label className="block text-gray-700 font-semibold mb-2">
-              Date of Birth (MM-DD-YYYY)
-            </label>
-            <input
-              type="date"
-              name="dob"
-              value={formData.dob}
-              onChange={handleChange}
-              className="form-input"
-              required
-            />
-          </div>
+      {/* //<div>
+        //    <label className="block text-gray-700 font-semibold mb-2">
+        //      Date of Birth (MM-DD-YYYY)
+        //    </label>
+        //    <input
+        //      type="date"
+        //      name="dob"
+         //     value={formData.dob}
+         //     onChange={handleChange}
+         //     className="form-input"
+         //     required
+           // />
+          //</div>  */}
 
           <button
             type="submit"

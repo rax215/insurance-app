@@ -46,7 +46,7 @@ const VehicleInfo = () => {
       <h2 className="text-3xl font-bold text-center mb-8">Vehicle Information</h2>
       <div className="bg-white rounded-lg shadow-lg p-8">
         <img 
-          src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+          src={require('../images/vehicleInfo.jpg')}
           alt="Vehicle Information"
           className="w-full h-48 object-cover rounded-lg mb-6"
         />

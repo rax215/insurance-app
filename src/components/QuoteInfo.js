@@ -18,7 +18,7 @@ const QuoteInfo = () => {
       <h2 className="text-3xl font-bold text-center mb-8">Your Quote</h2>
       <div className="bg-white rounded-lg shadow-lg p-8">
         <img 
-          src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+          src={require('../images/quoteInfo.jpg')}
           alt="Quote Information"
           className="w-full h-48 object-cover rounded-lg mb-6"
         />

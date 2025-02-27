@@ -17,7 +17,7 @@ const BeginQuote = () => {
       <h1 className="text-4xl font-bold text-center mb-8">Get Your Insurance Quote</h1>
       <div className="bg-white rounded-lg shadow-lg p-8">
         <img 
-          src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+          src={require('../images/beginQuote.jpg')} 
           alt="Insurance Coverage"
           className="w-full h-48 object-cover rounded-lg mb-6"
         />
