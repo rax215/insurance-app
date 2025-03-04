@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// const CAR_MAKES = [
+//   'Acura', 'Audi', 'BMW', 'Chevrolet', 'Chrysler', 'Dodge', 'Ford', 'Honda',
+//   'Hyundai', 'Infiniti', 'Jeep', 'Kia', 'Lexus', 'Mazda', 'Mercedes-Benz',
+//   'Nissan', 'Subaru', 'Tesla', 'Toyota', 'Volkswagen'
+// ];
+
 const CAR_MAKES = [
-  'Acura', 'Audi', 'BMW', 'Chevrolet', 'Chrysler', 'Dodge', 'Ford', 'Honda',
-  'Hyundai', 'Infiniti', 'Jeep', 'Kia', 'Lexus', 'Mazda', 'Mercedes-Benz',
-  'Nissan', 'Subaru', 'Tesla', 'Toyota', 'Volkswagen'
-];
+ 'Ford', 'Honda','Toyota'];
 
 const CAR_MODELS = {
   Toyota: ['Camry', 'Corolla', 'RAV4', 'Highlander', 'Prius'],
