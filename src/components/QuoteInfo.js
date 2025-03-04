@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const QuoteInfo = () => {
   const navigate = useNavigate();
+  const [premium, setPremium] = useState(0);
+  const [originalPremium, setOriginalPremium] = useState(0);
+  const [showDiscount, setShowDiscount] = useState(false);
+
+  useEffect(() => {
+    // Generate random 3-digit premium between 100 and 999
+    const randomPremium = Math.floor(Math.random() * 900) + 100;
+    setOriginalPremium(randomPremium);
+    
+    if (randomPremium > 300) {
+      setShowDiscount(true);
+      const discountedPremium = randomPremium * 0.95;
+      setPremium(discountedPremium);
+    } else {
+      setShowDiscount(false);
+      setPremium(randomPremium);
+    }
+  }, []);
 
   const handleBack = () => {
     navigate('/vehicle-info');
@@ -25,8 +43,14 @@ const QuoteInfo = () => {
         
         <div className="text-center mb-8">
           <h3 className="text-xl font-semibold mb-4">Your Monthly Premium</h3>
+          {showDiscount && (
+            <div className="bg-blue-100 text-blue-800 p-3 rounded-lg mb-4">
+              <p className="font-semibold">5% Good Payer Discount Applied!</p>
+              <p className="text-sm"><span className="line-through">${originalPremium}</span> → ${premium.toFixed(2)}</p>
+            </div>
+          )}
           <div className="bg-success bg-opacity-20 rounded-lg p-6 inline-block">
-            <span className="text-success text-4xl font-bold">$265</span>
+            <span className="text-success text-4xl font-bold">${premium.toFixed(2)}</span>
             <span className="text-success text-xl ml-1">/month</span>
           </div>
         </div>
