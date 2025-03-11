@@ -23,7 +23,8 @@ const VehicleInfo = () => {
     make: '',
     model: '',
     year: '',
-    ownership: ''
+    ownership: '',
+    firstOwner: ''
   });
 
   const handleChange = (e) => {
@@ -108,6 +109,51 @@ const VehicleInfo = () => {
               required
             />
           </div>
+          {formData.year && parseInt(formData.year) < 2018 && (
+            <div>
+              <label className="block text-gray-700 font-semibold mb-2">
+                Are you the first owner of the vehicle?
+              </label>
+              <div className="flex space-x-4">
+              {['Yes', 'No'].map(option => (
+                <label key={option} className="flex items-center">
+                  <input
+                    type="radio"
+                    name="firstOwner"
+                    value={option.toLowerCase()}
+                    checked={formData.firstOwner === option.toLowerCase()}
+                    onChange={handleChange}
+                    className="mr-2"
+                    required
+                  />
+                  {option}
+                </label>
+              ))}
+            </div>
+              {/* <div>
+                <input 
+                  type='radio' 
+                  id='firstOwnerYes' 
+                  name='firstOwner' 
+                  value='yes' 
+                  checked={formData.firstOwner === 'yes'}
+                  onChange={handleChange}
+                />
+                <label htmlFor='firstOwnerYes'>Yes</label>
+              </div> */}
+              {/* <div>
+                <input 
+                  type='radio' 
+                  id='firstOwnerNo' 
+                  name='firstOwner' 
+                  value='no' 
+                  checked={formData.firstOwner === 'no'}
+                  onChange={handleChange}
+                />
+                <label htmlFor='firstOwnerNo'>No</label>
+              </div> */}
+            </div>
+          )}
 
           <div>
             <label className="block text-gray-700 font-semibold mb-2">
